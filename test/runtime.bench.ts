@@ -1,9 +1,9 @@
 import { execa } from 'execa'
 import { bench, describe } from 'vitest'
 
-function runOxrunCommand(path = '') {
+function runSwrunCommand(path = '') {
   return execa('node', [
-    './bin/oxrun.js',
+    './bin/swrun.js',
     path,
   ])
 }
@@ -31,8 +31,8 @@ function runTsNodeCommand(path = '') {
 }
 
 describe('fibonacci', async () => {
-  bench('oxrun', () => {
-    runOxrunCommand('./test/fixtures/fibonacci.ts')
+  bench('swrun', () => {
+    runSwrunCommand('./test/fixtures/fibonacci.ts')
   })
 
   bench('jiti (no-cache)', () => {

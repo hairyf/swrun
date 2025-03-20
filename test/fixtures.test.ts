@@ -1,10 +1,10 @@
 import { execa } from 'execa'
 import { describe, expect, it } from 'vitest'
 
-describe('fixtures', async () => {
+describe.only('fixtures', async () => {
   it('fibonacci', async () => {
     const { stdout } = await execa('node', [
-      './bin/oxrun.js',
+      './bin/swrun.js',
       './test/fixtures/fibonacci.ts',
     ])
 

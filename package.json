@@ -1,20 +1,20 @@
 {
-  "name": "oxrun",
+  "name": "swrun",
   "type": "module",
   "version": "0.2.6",
-  "description": "Typescript node runtime powered by oxc-node",
-  "author": "tmg0",
+  "packageManager": "pnpm@10.6.5",
+  "description": "Typescript node runtime powered by swc-node",
+  "author": "Hairyf <wwu710632@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/tmg0/oxrun#readme",
+  "funding": "https://github.com/sponsors/hairyf",
+  "homepage": "https://github.com/hairyf/swrun#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tmg0/oxrun.git"
+    "url": "git+https://github.com/hairyf/swrun.git"
   },
-  "bugs": {
-    "url": "https://github.com/tmg0/oxrun/issues"
-  },
+  "bugs": "https://github.com/hairyf/swrun/issues",
   "keywords": [
-    "oxc",
+    "swc",
     "typescript",
     "node",
     "runtime"
@@ -22,7 +22,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "oxrun": "bin/oxrun.js"
+    "swrun": "bin/swrun.js"
   },
   "files": [
     "bin",
@@ -33,11 +33,13 @@
     "build": "tsup",
     "test": "vitest",
     "bench": "vitest bench",
+    "release": "bumpp && pnpm publish",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@oxc-node/core": "^0.0.15",
+    "@swc-node/register": "^1.10.10",
+    "@swc/core": "^1.11.11",
     "chokidar": "^4.0.1",
     "destr": "^2.0.3",
     "execa": "^9.4.0",
@@ -49,6 +51,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",
     "@types/node": "^22.7.5",
+    "bumpp": "^10.1.0",
     "eslint": "^9.12.0",
     "jiti": "^2.3.3",
     "ts-node": "^10.9.2",

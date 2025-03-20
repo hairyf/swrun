@@ -1,6 +1,6 @@
 import { createContext } from './core/context'
 import { resolveOptions } from './core/options'
-import { oxrun } from './core/oxrun'
+import { swrun } from './core/swrun'
 
 export async function main() {
   const options = resolveOptions()
@@ -9,6 +9,6 @@ export async function main() {
   await ctx.run()
 }
 
-export { oxrun }
+export { swrun }
 
-export default oxrun
+export default swrun

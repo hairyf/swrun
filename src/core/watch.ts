@@ -1,9 +1,9 @@
-import type { OxrunContext } from './types'
+import type { SwrunContext } from './types'
 import process from 'node:process'
 import { watch } from 'chokidar'
 import { debounce } from 'perfect-debounce'
 
-export function createWatcher(ctx: OxrunContext) {
+export function createWatcher(ctx: SwrunContext) {
   const reRun = debounce(() => {
     if (ctx.isRunning)
       ctx.abort()
@@ -21,7 +21,7 @@ export function createWatcher(ctx: OxrunContext) {
     ignoreInitial: true,
     ignorePermissionErrors: true,
     ignored: [
-      id => /oxrun\.[\s\S]*?\.mjs$/.test(id),
+      id => /swrun\.[\s\S]*?\.mjs$/.test(id),
       id => excludes.some(v => id.includes(v)),
     ],
   })

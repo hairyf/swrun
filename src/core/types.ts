@@ -7,4 +7,4 @@ export interface Options {
   watch?: false | string[]
 }
 
-export type OxrunContext = ReturnType<typeof createContext>
+export type SwrunContext = ReturnType<typeof createContext>
