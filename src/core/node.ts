@@ -1,11 +1,13 @@
-import { execa } from 'execa'
+import spawn from 'nano-spawn'
 
 export function runNodeCommand(args: (string | string[])[] = []) {
   const controller = new AbortController()
 
-  const subprocess = execa('node', args.flat(), {
-    cancelSignal: controller.signal,
+  const subprocess = spawn('node', args.flat(), {
+    signal: controller.signal,
     stdio: 'inherit',
+    stderr: 'inherit',
+    stdin: 'inherit',
   })
 
   return {

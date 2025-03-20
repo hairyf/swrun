@@ -1,5 +1,6 @@
 import type { FSWatcher } from 'chokidar'
 import type { Options } from './types'
+import path from 'node:path'
 import { resolve } from 'import-meta-resolve'
 import { runNodeCommand } from './node'
 import { isFeatureSupported, moduleRegister } from './node-features'
@@ -30,15 +31,17 @@ export function createContext(options: Options) {
         return
 
       const type = resolveRootPackage().type
+      const loaders = (type === 'module')
+        ? (isFeatureSupported(moduleRegister))
+            ? ['--import', resolve('@swc-node/register/esm-register', import.meta.url)]
+            : ['--loader', resolve('@swc-node/register/esm', import.meta.url)]
+        : ['--require', resolve('@swc-node/register', import.meta.url)]
 
       const { controller, subprocess } = runNodeCommand([
-        ...(type === 'module')
-          ? (isFeatureSupported(moduleRegister))
-              ? ['--import', resolve('@swc-node/register/esm-register', import.meta.url)]
-              : ['--loader', resolve('@swc-node/register/esm', import.meta.url)]
-          : ['--require', resolve('@swc-node/register', import.meta.url)],
+        loaders,
         options.scripts,
       ])
+
       _controller = controller
       ctx.isRunning = true
       await subprocess
