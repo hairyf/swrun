@@ -5,9 +5,12 @@ import process from 'node:process'
 export function resolveRootPackage(root = process.cwd()): Record<string, any> {
   const packFilepath = find(root, 'package.json')
   if (!packFilepath) {
-    return {}
+    return { }
   }
-  return JSON.parse(fs.readFileSync(packFilepath, 'utf8'))
+  return {
+    json: JSON.parse(fs.readFileSync(packFilepath, 'utf8')),
+    file: packFilepath,
+  }
 }
 
 function find(root: string, file: string): string | undefined {

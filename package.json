@@ -26,7 +26,8 @@
   },
   "files": [
     "bin",
-    "dist"
+    "dist",
+    "esm-register.mjs"
   ],
   "scripts": {
     "dev": "tsup --watch",
@@ -46,7 +47,8 @@
     "mri": "^1.2.0",
     "nano-spawn": "^0.2.0",
     "ohash": "^1.1.4",
-    "perfect-debounce": "^1.0.0"
+    "perfect-debounce": "^1.0.0",
+    "resolve-import-path": "^0.3.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",

@@ -1,6 +1,6 @@
 import type { FSWatcher } from 'chokidar'
 import type { Options } from './types'
-import path from 'node:path'
+import path, { dirname, join } from 'node:path'
 import { resolve } from 'import-meta-resolve'
 import { runNodeCommand } from './node'
 import { isFeatureSupported, moduleRegister } from './node-features'
@@ -30,12 +30,13 @@ export function createContext(options: Options) {
       if (!options.scripts.length)
         return
 
-      const type = resolveRootPackage().type
+      const { json: { type } } = resolveRootPackage()
+      const { file } = resolveRootPackage(import.meta.dirname)
       const loaders = (type === 'module')
         ? (isFeatureSupported(moduleRegister))
-            ? ['--import', resolve('@swc-node/register/esm-register', import.meta.url)]
+            ? ['--import', `file:///${join(dirname(file), 'esm-register.mjs')}`]
             : ['--loader', resolve('@swc-node/register/esm', import.meta.url)]
-        : ['--require', resolve('@swc-node/register', import.meta.url)]
+        : ['--require', resolve('@swc-node/register', import.meta.url).replace('file:///', '')]
 
       const { controller, subprocess } = runNodeCommand([
         loaders,

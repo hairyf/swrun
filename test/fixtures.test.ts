@@ -1,9 +1,9 @@
-import { execa } from 'execa'
+import spawn from 'nano-spawn'
 import { describe, expect, it } from 'vitest'
 
 describe.only('fixtures', async () => {
   it('fibonacci', async () => {
-    const { stdout } = await execa('node', [
+    const { stdout } = await spawn('node', [
       './bin/swrun.js',
       './test/fixtures/fibonacci.ts',
     ])
