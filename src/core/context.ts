@@ -1,6 +1,6 @@
 import type { FSWatcher } from 'chokidar'
 import type { Options } from './types'
-import path, { dirname, join } from 'node:path'
+import { dirname, join } from 'node:path'
 import { resolve } from 'import-meta-resolve'
 import { runNodeCommand } from './node'
 import { isFeatureSupported, moduleRegister } from './node-features'

@@ -1,7 +1,7 @@
 import spawn from 'nano-spawn'
 import { describe, expect, it } from 'vitest'
 
-describe.only('fixtures', async () => {
+describe('fixtures', async () => {
   it('fibonacci', async () => {
     const { stdout } = await spawn('node', [
       './bin/swrun.js',
