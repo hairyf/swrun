@@ -1,6 +1,10 @@
 # swrun
 
-[![NPM version](https://img.shields.io/npm/v/swrun)](https://www.npmjs.com/package/swrun)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![bundle][bundle-src]][bundle-href]
+[![JSDocs][jsdocs-src]][jsdocs-href]
+[![License][license-src]][license-href]
 
 forked from [oxrun](https://github.com/tmg0/oxrun), the swc version of oxrun (swrun)
 
@@ -106,3 +110,16 @@ The swrun project is heavily inspired by:
 ## License
 
 Made by 💛 [MIT](./LICENSE) License © 2024-PRESENT [Hairyf](https://github.com/hairyf)
+
+<!-- Badges -->
+
+[npm-version-src]: https://img.shields.io/npm/v/swrun?style=flat&colorA=080f12&colorB=1fa669
+[npm-version-href]: https://npmjs.com/package/swrun
+[npm-downloads-src]: https://img.shields.io/npm/dm/swrun?style=flat&colorA=080f12&colorB=1fa669
+[npm-downloads-href]: https://npmjs.com/package/swrun
+[bundle-src]: https://img.shields.io/bundlephobia/minzip/swrun?style=flat&colorA=080f12&colorB=1fa669&label=minzip
+[bundle-href]: https://bundlephobia.com/result?p=swrun
+[license-src]: https://img.shields.io/github/license/hairyf/swrun.svg?style=flat&colorA=080f12&colorB=1fa669
+[license-href]: https://github.com/hairyf/swrun/blob/main/LICENSE
+[jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
+[jsdocs-href]: https://www.jsdocs.io/package/swrun
