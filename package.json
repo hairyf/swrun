@@ -34,6 +34,7 @@
     "build": "tsup",
     "test": "vitest",
     "bench": "vitest bench",
+    "typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm publish",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -57,7 +58,6 @@
     "bumpp": "^10.1.0",
     "eslint": "^9.12.0",
     "jiti": "^2.3.3",
-    "nano-spawn": "^0.2.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.3.0",
     "tsx": "^4.19.1",
