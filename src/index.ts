@@ -5,8 +5,10 @@ import { swrun } from './core/swrun'
 export async function main() {
   const options = resolveOptions()
   const ctx = createContext(options)
-  ctx.setup()
-  await ctx.run()
+  if (options.watch)
+    await ctx.watch()
+  else
+    await ctx.run()
 }
 
 export { swrun }

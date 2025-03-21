@@ -1,17 +1,13 @@
-import spawn from 'nano-spawn'
+import type { StdioOptions } from 'node:child_process'
+import spawn from 'cross-spawn'
 
 export function runNodeCommand(args: (string | string[])[] = []) {
-  const controller = new AbortController()
-
-  const subprocess = spawn('node', args.flat(), {
-    signal: controller.signal,
-    stdio: 'inherit',
-    stderr: 'inherit',
-    stdin: 'inherit',
+  const stdio: StdioOptions = [
+    'inherit', // stdin
+    'inherit', // stdout
+    'inherit', // stderr
+  ]
+  return spawn('node', args.flat(), {
+    stdio,
   })
-
-  return {
-    controller,
-    subprocess,
-  }
 }

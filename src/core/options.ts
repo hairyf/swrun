@@ -1,30 +1,31 @@
 import type { Options } from './types'
 import process from 'node:process'
-import { destr } from 'destr'
+import { destr as _destr } from 'destr'
 import mri from 'mri'
 
+const destr = (value: string) => _destr<string>(value)
 const argv = process.argv.slice(2)
 
-const { _: scripts, watch, root, ignore } = mri<Record<string, string | string[]>>(argv, {
+let { _: scripts, include, root, exclude } = mri<Record<string, string | string[]>>(argv, {
   default: {
-    watch: 'false',
     ignore: '',
   },
 })
+const watch = scripts[0] === 'watch'
+scripts = scripts.filter(s => s !== 'watch')
 
 export function resolveOptions(): Options {
   return {
     scripts,
     root: [root].flat()[0] ?? process.cwd(),
-    ignore: [ignore].flat().filter(Boolean),
+    ignore: [exclude].flat().filter(Boolean),
     get watch() {
-      const encodeGlobs = [watch].flat()
-      const r = encodeGlobs.map(glob => destr<boolean | string>(glob))
-      if (r.includes(false))
+      if (!watch)
         return false
-      if (r.some(v => ['', true].includes(v)))
+      if (!include)
         return [process.cwd()]
-      return r as string[]
+      const flat = [include].flat()
+      return flat.map(destr)
     },
   }
 }
