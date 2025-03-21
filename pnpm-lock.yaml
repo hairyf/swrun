@@ -14,9 +14,9 @@ importers:
       '@swc/core':
         specifier: ^1.11.11
         version: 1.11.11
-      chokidar:
-        specifier: ^4.0.1
-        version: 4.0.1
+      cross-spawn:
+        specifier: ^7.0.6
+        version: 7.0.6
       destr:
         specifier: ^2.0.3
         version: 2.0.3
@@ -26,15 +26,15 @@ importers:
       mri:
         specifier: ^1.2.0
         version: 1.2.0
-      nano-spawn:
-        specifier: ^0.2.0
-        version: 0.2.0
       ohash:
         specifier: ^1.1.4
         version: 1.1.4
       perfect-debounce:
         specifier: ^1.0.0
         version: 1.0.0
+      rerun-watcher:
+        specifier: ^0.2.0
+        version: 0.2.0
       resolve-import-path:
         specifier: ^0.3.2
         version: 0.3.2
@@ -42,6 +42,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^3.7.3
         version: 3.7.3(@typescript-eslint/utils@8.7.0(eslint@9.12.0(jiti@2.3.3))(typescript@5.6.2))(@vue/compiler-sfc@3.5.9)(eslint@9.12.0(jiti@2.3.3))(typescript@5.6.2)(vitest@2.1.2(@types/node@22.7.5))
+      '@types/cross-spawn':
+        specifier: ^6.0.6
+        version: 6.0.6
       '@types/node':
         specifier: ^22.7.5
         version: 22.7.5
@@ -54,6 +57,9 @@ importers:
       jiti:
         specifier: ^2.3.3
         version: 2.3.3
+      nano-spawn:
+        specifier: ^0.2.0
+        version: 0.2.0
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.11.11)(@types/node@22.7.5)(typescript@5.6.2)
@@ -817,6 +823,9 @@ packages:
   '@tybys/wasm-util@0.9.0':
     resolution: {integrity: sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw==}
 
+  '@types/cross-spawn@6.0.6':
+    resolution: {integrity: sha512-fXRhhUkG4H3TQk5dBhQ7m/JDdSNHKwR2BBia62lhwEIq9xGiQKLxd6LymNhn47SjXhsUEPmxi+PKw2OkW4LLjA==}
+
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
@@ -1114,10 +1123,6 @@ packages:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
 
-  chokidar@4.0.1:
-    resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
-    engines: {node: '>= 14.16.0'}
-
   chokidar@4.0.3:
     resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
     engines: {node: '>= 14.16.0'}
@@ -1187,8 +1192,8 @@ packages:
   create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
 
-  cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
   cssesc@3.0.0:
@@ -1769,6 +1774,9 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
+  kolorist@1.8.0:
+    resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
+
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -2217,6 +2225,9 @@ packages:
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
+
+  rerun-watcher@0.2.0:
+    resolution: {integrity: sha512-hHZd2LleN6oT7wBQotccweOmVG2q6jSKo301N6k4hmOOUGBHvLj6cs8a4Gngmcl4PBFflEHx5ZJOQ/VhESktmw==}
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -3253,6 +3264,10 @@ snapshots:
       tslib: 2.7.0
     optional: true
 
+  '@types/cross-spawn@6.0.6':
+    dependencies:
+      '@types/node': 22.7.5
+
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 0.7.34
@@ -3597,10 +3612,6 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  chokidar@4.0.1:
-    dependencies:
-      readdirp: 4.0.1
-
   chokidar@4.0.3:
     dependencies:
       readdirp: 4.0.1
@@ -3657,7 +3668,7 @@ snapshots:
 
   create-require@1.1.1: {}
 
-  cross-spawn@7.0.3:
+  cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
@@ -4006,7 +4017,7 @@ snapshots:
       '@types/json-schema': 7.0.15
       ajv: 6.12.6
       chalk: 4.1.2
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       debug: 4.3.7
       escape-string-regexp: 4.0.0
       eslint-scope: 8.1.0
@@ -4070,7 +4081,7 @@ snapshots:
 
   execa@5.1.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 6.0.1
       human-signals: 2.1.0
       is-stream: 2.0.1
@@ -4137,7 +4148,7 @@ snapshots:
 
   foreground-child@3.3.0:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
   fsevents@2.3.3:
@@ -4300,6 +4311,8 @@ snapshots:
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
+
+  kolorist@1.8.0: {}
 
   levn@0.4.1:
     dependencies:
@@ -4898,6 +4911,11 @@ snapshots:
       jsesc: 0.5.0
 
   require-directory@2.1.1: {}
+
+  rerun-watcher@0.2.0:
+    dependencies:
+      chokidar: 4.0.3
+      kolorist: 1.8.0
 
   resolve-from@4.0.0: {}
 

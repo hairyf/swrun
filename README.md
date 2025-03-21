@@ -4,7 +4,7 @@
 
 forked from [oxrun](https://github.com/tmg0/oxrun), the swc version of oxrun (swrun)
 
-⚓ Typescript node runtime powered by [swc-node](https://github.com/swc-project/swc-node)
+Typescript node runtime powered by [swc-node](https://github.com/swc-project/swc-node)
 
 ## Feature
 
@@ -38,6 +38,14 @@ pnpm add swrun -D
 }
 ```
 
+### `Watch`
+
+Swrun supports watch mode with `watch` and this will automatically re-run your script whenever any of files under root dir changed.
+
+```bash
+npx swrun watch hello.ts
+```
+
 ### `Programmatic`
 
 ```ts
@@ -58,42 +66,27 @@ import swrun from 'swrun'
 })()
 ```
 
-[nuxlite](https://github.com/tmg0/nuxlite) use swrun as typescript config file parser, and here is the [source](https://github.com/tmg0/nuxlite/blob/main/packages/builder/src/core.ts):
-
-```ts
-export async function resolveNuxliteConfig() {
-  const { default: config } = await swrun.import<{ default: NuxliteConfig }>('./nuxlite.config.ts')
-
-  return defu(config, {
-    builder: 'rsbuild',
-    server: {
-      port: Number(process.env.NUXLITE_PORT) || 5173,
-    },
-  })
-}
-```
-
-## Benchmark
-
-```bash
-# TODO
-```
-
 ## Props
 
-### `props.watch`
+### `props.include`
 
-- Type: `false | string`
+- Type: `string` | `string[]`
 - Default: `false`
-
-Swrun supports watch mode with `--watch` and this will automatically re-run your script whenever any of files under root dir changed.
 
 Watch can be a boolean or string (Can be set to a string of the path), empty string `''` will be parse as a truthy value like `true`.
 
-### `props.ignore`
+```sh
+swrun watch hello.ts --include ./other-dep.txt --include "./other-deps/*"
+```
+
+### `props.exclude`
 
 - Type: `string`
 - Default: `undefined`
+
+```sh
+swrun watch hello.ts --exclude ./**/*.test.js
+```
 
 ## Development
 
@@ -112,4 +105,4 @@ The swrun project is heavily inspired by:
 
 ## License
 
-Made by 💛 [MIT](./LICENSE) License © 2024-PRESENT [Tamago](https://github.com/tmg0)
+Made by 💛 [MIT](./LICENSE) License © 2024-PRESENT [Hairyf](https://github.com/hairyf)
