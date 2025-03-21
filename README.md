@@ -10,6 +10,10 @@
 
 Typescript node runtime powered by [swc-node](https://github.com/swc-project/swc-node)
 
+## Why?
+
+Due to the current lack of support for the `emitDecoratorMetadata` configuration in tsx [tsx#37](https://github.com/privatenumber/tsx/issues/37), this can cause exceptions when running some TypeORM projects (e.g., nestjs). Additionally, oxc-node is still in the development stage and does not support hybrid mode [oxc-node#80](https://github.com/oxc-project/oxc-node/issues/80).
+
 ## Feature
 
 🚀 Super fast typescript transformer by [swc](https://github.com/swc-project/swc)
