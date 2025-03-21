@@ -6,7 +6,7 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-forked from [oxrun](https://github.com/tmg0/oxrun), the swc version of oxrun (swrun)
+> forked from [oxrun](https://github.com/tmg0/oxrun), the swc version of oxrun (swrun)
 
 Typescript node runtime powered by [swc-node](https://github.com/swc-project/swc-node)
 
