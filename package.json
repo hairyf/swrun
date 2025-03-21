@@ -1,7 +1,7 @@
 {
   "name": "swrun",
   "type": "module",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "packageManager": "pnpm@10.6.5",
   "description": "Typescript node runtime powered by swc-node",
   "author": "Hairyf <wwu710632@gmail.com>",
