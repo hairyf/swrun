@@ -1,15 +1,15 @@
-import { execa } from 'execa'
+import spawn from 'cross-spawn'
 import { bench, describe } from 'vitest'
 
 function runSwrunCommand(path = '') {
-  return execa('node', [
+  return spawn('node', [
     './bin/swrun.js',
     path,
   ])
 }
 
 function runJitiCommand(path = '') {
-  return execa('jiti', [
+  return spawn('jiti', [
     path,
     '--fs-cache',
     'false',
@@ -19,7 +19,7 @@ function runJitiCommand(path = '') {
 }
 
 function runTsxCommand(path = '') {
-  return execa('tsx', [
+  return spawn('tsx', [
     path,
     '--no-cache',
     'true',
@@ -27,7 +27,7 @@ function runTsxCommand(path = '') {
 }
 
 function runTsNodeCommand(path = '') {
-  return execa('ts-node', [path])
+  return spawn('ts-node', [path])
 }
 
 describe('fibonacci', async () => {
