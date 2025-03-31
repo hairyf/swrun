@@ -48,7 +48,7 @@
     "mri": "^1.2.0",
     "ohash": "^1.1.4",
     "perfect-debounce": "^1.0.0",
-    "rerun-watcher": "^0.2.0",
+    "rerun-watcher": "^0.3.0",
     "resolve-import-path": "^0.3.2"
   },
   "devDependencies": {
