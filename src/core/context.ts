@@ -1,5 +1,6 @@
 import type { Options } from './types'
 import { dirname, join } from 'node:path'
+import process from 'node:process'
 import { resolve } from 'import-meta-resolve'
 import { createRerunWatcher, type FSWatcher } from 'rerun-watcher'
 import { runNodeCommand } from './node'
@@ -29,11 +30,12 @@ export function createContext(options: Options) {
   async function run() {
     const { json: { type } } = resolveRootPackage()
     const { file } = resolveRootPackage(import.meta.dirname)
+    const replacePrefix = process.platform === 'win32' ? 'file:///' : 'file://'
     const loaders = (type === 'module')
       ? (isFeatureSupported(moduleRegister))
           ? ['--import', `file:///${join(dirname(file), 'esm-register.mjs')}`]
           : ['--loader', resolve('@swc-node/register/esm', import.meta.url)]
-      : ['--require', resolve('@swc-node/register', import.meta.url).replace('file:///', '')]
+      : ['--require', resolve('@swc-node/register', import.meta.url).replace(replacePrefix, '')]
 
     return runNodeCommand([
       loaders,
