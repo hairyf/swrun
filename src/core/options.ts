@@ -1,7 +1,6 @@
 import type { Options } from './types'
 import path from 'node:path'
 import process from 'node:process'
-import { destr } from 'destr'
 import mri from 'mri'
 
 const argv = process.argv.slice(2)
@@ -17,22 +16,18 @@ scripts = scripts.filter(s => s !== 'watch')
 export function resolveOptions(): Options {
   return {
     scripts,
-    root: resolves(root)[0] ?? process.cwd(),
-    ignore: resolves(exclude),
+    root: rs(root)[0] ?? process.cwd(),
+    ignore: rs(exclude),
     get watch() {
       if (!watch)
         return false
       if (!include)
         return [process.cwd()]
-      return resolves(include)
+      return rs(include)
     },
   }
 }
 
-function resolves(paths: string | string[]) {
-  return [paths]
-    .flat()
-    .filter(Boolean)
-    .map((p => destr<string>(p)))
-    .map(p => path.resolve(p))
+function rs(paths: string | string[]) {
+  return [paths].flat().filter(Boolean)
 }

@@ -44,7 +44,6 @@
     "@swc-node/register": "^1.10.10",
     "@swc/core": "^1.11.11",
     "cross-spawn": "^7.0.6",
-    "destr": "^2.0.3",
     "import-meta-resolve": "^4.1.0",
     "mri": "^1.2.0",
     "ohash": "^1.1.4",
