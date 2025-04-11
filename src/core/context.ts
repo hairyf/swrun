@@ -22,7 +22,10 @@ export function createContext(options: Options) {
       ctx.watcher = await createRerunWatcher(
         options.watch,
         run,
-        { name: 'swrun' },
+        {
+          name: 'swrun',
+          ignored: options.ignore || [],
+        },
       )
     }
   }

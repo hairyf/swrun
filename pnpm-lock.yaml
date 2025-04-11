@@ -33,8 +33,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       rerun-watcher:
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.5.0
+        version: 0.5.0
       resolve-import-path:
         specifier: ^0.3.2
         version: 0.3.2
@@ -2219,8 +2219,8 @@ packages:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
 
-  rerun-watcher@0.3.0:
-    resolution: {integrity: sha512-lZWLVfmZHpvEP6VvnEmsvFMEBaiihpJNRwSccam+peZ63LFaLIbFb/wIDkZTs8pnrpj7h7i1hvfW2oPFmGh+XA==}
+  rerun-watcher@0.5.0:
+    resolution: {integrity: sha512-mK20l8nfNfjZPemYYZDSh48Z3IYtl/oowUg6sK67oc3kdEAHPD03lvVd/0yVKUclLLm8PtEYEfRIWwHnd2mSVA==}
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -4903,9 +4903,9 @@ snapshots:
 
   require-directory@2.1.1: {}
 
-  rerun-watcher@0.3.0:
+  rerun-watcher@0.5.0:
     dependencies:
-      chokidar: 4.0.3
+      chokidar: 3.6.0
       kolorist: 1.8.0
       normalize-path: 3.0.0
 
