@@ -2,7 +2,7 @@
   "name": "swrun",
   "type": "module",
   "version": "0.6.2",
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.10.0",
   "description": "Typescript node runtime powered by swc-node",
   "author": "Hairyf <wwu710632@gmail.com>",
   "license": "MIT",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@swc-node/register": "^1.10.10",
-    "@swc/core": "^1.11.18",
+    "@swc/core": "^1.11.24",
     "cross-spawn": "^7.0.6",
     "import-meta-resolve": "^4.1.0",
     "mri": "^1.2.0",
@@ -52,16 +52,16 @@
     "resolve-import-path": "^0.3.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.12.0",
+    "@antfu/eslint-config": "^4.13.0",
     "@types/cross-spawn": "^6.0.6",
-    "@types/node": "^22.14.0",
+    "@types/node": "^22.15.17",
     "bumpp": "^10.1.0",
-    "eslint": "^9.24.0",
+    "eslint": "^9.26.0",
     "jiti": "^2.4.2",
     "ts-node": "^10.9.2",
     "tsup": "^8.4.0",
-    "tsx": "^4.19.3",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3",
-    "vitest": "^3.1.1"
+    "vitest": "^3.1.3"
   }
 }
